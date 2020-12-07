@@ -10,7 +10,7 @@ class Test1 extends React.Component{
         setInterval(this.getMatches,10000)
     }
         getMatches=()=>{
-            axios.get("/cbzios/match/livematches")
+            axios.get("mapps.cricbuzz.com/cbzios/match/livematches")
             .then(res=>{
                 const matches=res.data.matches
                 console.log("renderign matches")
