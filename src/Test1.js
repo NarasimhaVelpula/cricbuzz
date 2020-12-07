@@ -12,6 +12,7 @@ class Test1 extends React.Component{
         getMatches=()=>{
             axios.get("cbzios/match/livematches")
             .then(res=>{
+                console.log(res)
                 const matches=res.data.matches
                 console.log("renderign matches")
                 console.log(matches)
