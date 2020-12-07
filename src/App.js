@@ -1,25 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Test1 from './Test1';
+import React from 'react';
+import Match from './Match';
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      showMatch:false,
+      matchId:""
+    }
+  }
+  matchDetails=(matchid)=>{
+    this.setState({showMatch:true,matchId:matchid})
+  }
+  render=()=>{
+    if(this.state.showMatch===false){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Live Matches</h1>
+       <Test1 MatchDetails={this.matchDetails} />
+      <footer>
+        @Copyrights Narasimha<br />
+        Special Thanks to CricBuzz Apis
+
+      </footer>
     </div>
   );
+    }
+    else{
+      return(
+        <div className="App">
+        <h1>Live Matches</h1>
+         <Match matchId={this.state.matchId} />
+        <footer>
+          @Copyrights Narasimha<br />
+          Special Thanks to CricBuzz Apis
+  
+        </footer>
+      </div>
+      )
+    }
+  }
 }
 
 export default App;
