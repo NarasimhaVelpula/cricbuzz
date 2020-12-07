@@ -14,7 +14,7 @@ class Test1 extends React.Component{
             .then(res=>{
                 const matches=res.data.matches
                 console.log("renderign matches")
-                console.log(matches[0].header.status)
+                //console.log(matches[0].header.status)
                 this.setState({matches})
             }
             )
